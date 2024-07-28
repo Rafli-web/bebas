@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do List App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="input-container">
+            <input type="text" id="task" placeholder="silahkan isi...">
+            <button id="add">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+body{
+    background: linear-gradient(to bottom right,#feb930,#da1467);
+    color:#eee;
+    height:100vh;
+    display: grid;
+    place-items: center;
+}
+
+#wrapper{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    position: relative;
+    background: rgba(255,255,255,0,25);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+#wrapper div{
+    margin: 8px;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background: #0005;
+    display: grid;
+    place-items: center;
+    font: bold 34px monospace;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 5;
+}
+
+      const hr=document. querySelector("#hr")
+const min=document. querySelector("#min")
+const sec=document. querySelector("#sec")
+
+const update= () => {
+    let date= new Date();
+    let h= date.getHours();
+
+    hr.innerText= `0${h}`. slice(-2);
+    min.innerText=`0${date.getMinutes}`.slice(-2);
+    Sec.innerText=`0${date.getSeconds}`.slice(-2);
+};
+setInterval(update,1000);
+window.onload= update();
